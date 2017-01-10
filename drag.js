@@ -9,4 +9,8 @@
          disX=ev.pageX-obj.offsetLeft;
          disY=ev.pageY-obj.offsetTop;
     };
+   obj.onmousemove=function(ev){
+      disX=ev.pageX-obj.clientLeft;
+      disY=ev.pageY-obj.clientTop;
+   };
 }
