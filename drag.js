@@ -8,10 +8,14 @@
     obj.onmousedown=function(ev){
          disX=ev.pageX-obj.offsetLeft;
          disY=ev.pageY-obj.offsetTop;
+        document.onmousemove=function(ev){
+            obj.style.left=ev.pageX-disX+'px';
+            obj.style.top=ev.pageY-disY+'px';
+        };
+        document.onmouseup=function(){
+            document.onmousemove=null;
+            document.onmouseup=null;
+        };
     };
-   obj.onmousemove=function(ev){
-      disX=ev.pageX-obj.clientLeft;
-      disY=ev.pageY-obj.clientTop;
-   };
-
+    return false;
 }
